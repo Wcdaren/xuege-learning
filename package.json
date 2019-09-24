@@ -8,6 +8,14 @@
     "build": "vuepress build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luoxue-victor/xuege-learning.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luoxue-victor/xuege-learning/issues"
+  },
+  "homepage": "https://github.com/luoxue-victor/xuege-learning#readme"
 }
