@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set dev=true vuepress dev",
+    "dev": "vuepress dev",
     "build": "vuepress build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/luoxue-victor/xuege-learning/issues"
   },
-  "homepage": "https://github.com/luoxue-victor/xuege-learning#readme"
+  "homepage": "https://github.com/luoxue-victor/xuege-learning#readme",
+  "devDependencies": {
+    "less-loader": "^5.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.6.1",
+    "less": "^3.10.3"
+  }
 }
