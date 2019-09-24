@@ -8,8 +8,10 @@ module.exports = {
   description: '前端知识深入学习',
   themeConfig: {
     nav: [
-      { text: 'Home', link: env_build ? baseUrl + '/index.html' : '/' },
-      { text: 'Guide', link: env_build ? baseUrl + '/guide/index.html' : '/guide/' },
+      // { text: 'Home', link: env_build ? baseUrl + '/index.html' : '/' },
+      // { text: 'Guide', link: env_build ? baseUrl + '/guide/index.html' : '/guide/' },
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/' },
       {
         text: 'Languages',
         items: [
