@@ -22,7 +22,7 @@
     "less-loader": "^5.0.0"
   },
   "dependencies": {
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.6.4",
     "less": "^3.10.3"
   }
 }
