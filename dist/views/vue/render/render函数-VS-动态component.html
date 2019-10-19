@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>render函数-VS-动态component | 技匠</title>
+    <meta name="description" content="前端知识深入学习">
+    
+    
+    <link rel="preload" href="/xuege-learning/dist/assets/css/0.styles.2ac2341d.css" as="style"><link rel="preload" href="/xuege-learning/dist/assets/js/app.1272842f.js" as="script"><link rel="preload" href="/xuege-learning/dist/assets/js/2.9a27edc2.js" as="script"><link rel="preload" href="/xuege-learning/dist/assets/js/15.6e6c3322.js" as="script"><link rel="prefetch" href="/xuege-learning/dist/assets/js/10.1edc887d.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/11.c33cd1d6.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/12.95634cf7.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/13.8273144d.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/14.76e522c6.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/16.754eee8b.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/17.7b065a7a.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/18.9918dab7.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/19.70815744.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/3.7c8edd8c.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/4.9c46e92c.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/5.92d6629d.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/6.88e5c412.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/7.6ceebf39.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/8.cdc2287e.js"><link rel="prefetch" href="/xuege-learning/dist/assets/js/9.2f8cf3ca.js">
+    <link rel="stylesheet" href="/xuege-learning/dist/assets/css/0.styles.2ac2341d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/xuege-learning/dist/" class="home-link router-link-active"><!----> <span class="site-name">技匠</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/xuege-learning/dist/" class="nav-link">Home</a></div><div class="nav-item"><a href="/xuege-learning/dist/guide/" class="nav-link">Guide</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/xuege-learning/dist/language/chinese.html" class="nav-link">Chinese</a></li><li class="dropdown-item"><!----> <a href="/xuege-learning/dist/language/english.html" class="nav-link">English</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/luoxue-victor/xuege-learning" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/xuege-learning/dist/" class="nav-link">Home</a></div><div class="nav-item"><a href="/xuege-learning/dist/guide/" class="nav-link">Guide</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/xuege-learning/dist/language/chinese.html" class="nav-link">Chinese</a></li><li class="dropdown-item"><!----> <a href="/xuege-learning/dist/language/english.html" class="nav-link">English</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/luoxue-victor/xuege-learning" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>render函数-VS-动态component</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/xuege-learning/dist/views/vue/render/render%E5%87%BD%E6%95%B0-VS-%E5%8A%A8%E6%80%81component.html#需求-页面需要支持模块化可配置，比如首页需要有banner模块、列表模块、中通模块、金刚模块等等，通过配置的方式实现模块的展示。" class="sidebar-link">需求--页面需要支持模块化可配置，比如首页需要有banner模块、列表模块、中通模块、金刚模块等等，通过配置的方式实现模块的展示。</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/xuege-learning/dist/views/vue/render/render%E5%87%BD%E6%95%B0-VS-%E5%8A%A8%E6%80%81component.html#_1-使用动态component组件" class="sidebar-link">1. 使用动态component组件</a></li><li class="sidebar-sub-header"><a href="/xuege-learning/dist/views/vue/render/render%E5%87%BD%E6%95%B0-VS-%E5%8A%A8%E6%80%81component.html#_2-使用render函数重写上面的代码" class="sidebar-link">2. 使用render函数重写上面的代码</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="render函数-vs-动态component"><a href="#render函数-vs-动态component" aria-hidden="true" class="header-anchor">#</a> render函数-VS-动态component</h1> <blockquote><p>大家应该都知道vue的render函数跟vue的动态组件，但是可能在90%的业务场景中都不会用到这方法，所以可能也不会去深究这些api的用法。这次正好有幸做了一次动态渲染组件的需求，小编就拿出来给大家分享一下。</p></blockquote> <h2 id="需求-页面需要支持模块化可配置，比如首页需要有banner模块、列表模块、中通模块、金刚模块等等，通过配置的方式实现模块的展示。"><a href="#需求-页面需要支持模块化可配置，比如首页需要有banner模块、列表模块、中通模块、金刚模块等等，通过配置的方式实现模块的展示。" aria-hidden="true" class="header-anchor">#</a> 需求--页面需要支持模块化可配置，比如首页需要有banner模块、列表模块、中通模块、金刚模块等等，通过配置的方式实现模块的展示。</h2> <p>在做需求之前我们思考一下，有几种做法。</p> <blockquote><p>第一种使用动态组件，通过is特性来在模板上展示对应组件。第二种使用render函数直接生成VNode渲染。接下来我们评估一下这两个方案的优劣点和如何使用</p></blockquote> <h3 id="_1-使用动态component组件"><a href="#_1-使用动态component组件" aria-hidden="true" class="header-anchor">#</a> 1. 使用动态component组件</h3> <p>这是一个动态组件官方示例</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>is</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>currentTabComponent<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>component</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>解决将组件挂载到模板：首先我们要通过require动态引入组件，然后遍历component组件，使用is属性将组件挂载在模板上。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>component
+      v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(component, index) in components&quot;</span>
+      <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span>
+      v<span class="token operator">-</span>bind<span class="token punctuation">:</span>is<span class="token operator">=</span><span class="token string">&quot;component.component&quot;</span>
+    <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>解决向子组件传参：因为我们不可能知道所有组件都有什么属性，所以我们需要将所有props聚合到一起，注册一个props属性，在子组件通过唯一的props属性取值</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>component
+      v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(component, index) in components&quot;</span>
+      <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span>
+      v<span class="token operator">-</span>bind<span class="token punctuation">:</span>is<span class="token operator">=</span><span class="token string">&quot;component.component&quot;</span>
+      <span class="token punctuation">:</span>props<span class="token operator">=</span><span class="token string">&quot;component.prop&quot;</span>
+    <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>解决更改组件样式：需要手动声明一个style，然后传给子组件，子组件把style更新展示</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>component
+      v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(component, index) in components&quot;</span>
+      <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span>
+      v<span class="token operator">-</span>bind<span class="token punctuation">:</span>is<span class="token operator">=</span><span class="token string">&quot;component.component&quot;</span>
+      <span class="token punctuation">:</span>props<span class="token operator">=</span><span class="token string">&quot;component.prop&quot;</span>
+      <span class="token punctuation">:</span>style<span class="token operator">=</span><span class="token string">&quot;component.style&quot;</span>
+    <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>。。。</li></ul> <p>由此可以看出，动态组件的问题，我如果想要更改子组件，都需要通过props向下传给子组件，让子组件处理对应逻辑，这样每次需要对子组件约定一套规定的写法，比如props需要聚合，style要放到props内才能使用，注册class、attr等等都需要如此操作。而这个方案需要让第二个使用者知道才能更好的工作，无疑增加了使用成本。接下来是一个动态组件的完整例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>component
+      v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;(component, index) in components&quot;</span>
+      <span class="token punctuation">:</span>key<span class="token operator">=</span><span class="token string">&quot;index&quot;</span>
+      v<span class="token operator">-</span>bind<span class="token punctuation">:</span>is<span class="token operator">=</span><span class="token string">&quot;component.component&quot;</span>
+      <span class="token punctuation">:</span>props<span class="token operator">=</span><span class="token string">&quot;component.prop&quot;</span>
+    <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script lang<span class="token operator">=</span><span class="token string">&quot;ts&quot;</span><span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Prop<span class="token punctuation">,</span> Vue<span class="token punctuation">,</span> Watch <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-property-decorator'</span><span class="token punctuation">;</span>
+
+@Component
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Components</span> <span class="token keyword">extends</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> list <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'banner'</span><span class="token punctuation">,</span>
+      prop<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        msg<span class="token punctuation">:</span> <span class="token string">'我是来自banner props'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      style<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        background<span class="token punctuation">:</span> <span class="token string">'green'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'tabs'</span><span class="token punctuation">,</span>
+      prop<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        msg<span class="token punctuation">:</span> <span class="token string">'我是来自tabs props'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">get</span> <span class="token function">components</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">component</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@/components/modules/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>component<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.vue</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span>default
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        component<span class="token punctuation">:</span> c<span class="token punctuation">,</span>
+        prop<span class="token punctuation">:</span> component<span class="token punctuation">.</span>prop
+        style<span class="token punctuation">:</span> component<span class="token punctuation">.</span>style
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="_2-使用render函数重写上面的代码"><a href="#_2-使用render函数重写上面的代码" aria-hidden="true" class="header-anchor">#</a> 2. 使用render函数重写上面的代码</h3> <p>首先介绍一下render函数</p> <ul><li>如果想要在vue单文件中使用render函数，必须不能有temlpate模板，因为vue会检测组件内有模板就不会调用render</li> <li>render有三个参数，第一个参数是组件或者标签名，第二个参数是组件的VNode配置选项，第三个参数是一个数组，数组是子组件的集合</li> <li>需要注意的一点是，如果第二个参数是字符串，那么第三个参数是不生效的, 如下展示h2不会生效</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">,</span> <span class="token string">'我是一个父组件'</span> <span class="token punctuation">,</span> <span class="token punctuation">[</span>
+  <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">,</span> <span class="token string">'我是一个子组件'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h2'</span><span class="token punctuation">,</span> <span class="token string">'我是一个子组件'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>使用示例 usage</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">'red'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+  <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">,</span> <span class="token string">'我是一个子组件'</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>理解了render函数之后我们思考一下如何重写上面的需求，我们不需要动态注册模板，因为render已经帮我们做了这件事，props和style等传值也可以直接交给render函数就可以了。看起来我们什么都不需要做，只需要写一个render就可以实现我们上面所有的问题了。让我们拭目以待哦</p> <p>这是一个完整的render示例</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      list<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'banner'</span><span class="token punctuation">,</span>
+          props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            msg<span class="token punctuation">:</span> <span class="token string">'我是来自banner props'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          style<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            background<span class="token punctuation">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span>
+            marginTop<span class="token punctuation">:</span> <span class="token string">'100px'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">'tabs'</span><span class="token punctuation">,</span>
+          props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            msg<span class="token punctuation">:</span> <span class="token string">'我是来自tabs props'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> components <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>list
+      <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">component</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@/components/modules/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>component<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.vue</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>default<span class="token punctuation">;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeProp</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span>component <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=&gt;</span> _<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> components<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+</code></pre></div><p>是不是很精简，render函数可以让我们的语法更接近js，我们的核心代码仅仅不到十行就可以完成了一次壮举哈哈，希望能够让大家从中得到启发，让代码使我们变得更美好。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/xuege-learning/dist/assets/js/app.1272842f.js" defer></script><script src="/xuege-learning/dist/assets/js/2.9a27edc2.js" defer></script><script src="/xuege-learning/dist/assets/js/15.6e6c3322.js" defer></script>
+  </body>
+</html>
